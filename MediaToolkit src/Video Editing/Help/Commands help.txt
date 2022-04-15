@@ -1,0 +1,62 @@
+﻿When importing an image sequence, -i also supports expanding shell-like wildcard patterns (globbing) internally, by selecting the image2-specific -pattern_type glob option.
+
+For example, for creating a video from filenames matching the glob pattern foo-*.jpeg:
+
+ffmpeg -f image2 -pattern_type glob -framerate 12 -i 'foo-*.jpeg' -s WxH foo.avi
+
+ffmpeg -f image2 -pattern_type glob -framerate 12 -i 'i-*.jpeg' -s WxH foo.avi
+
+ffmpeg -f image2 -framerate 12 -i i-%03d.jpeg -s WxH foo.avi
+
+ffmpeg -start_number 1 -i '%d.jpeg' -c:v libx264 out.mp4
+
+ffmpeg -i input.mp4 -vf drawtext="text='Party Time': fontsize=120" output01.mp4
+
+ffmpeg -i input.mp3 -vf drawtext="text='Party Time': fontsize=120" output01.mp4
+
+ffmpeg -i input.mp3 -vf drawtext="text='abc abc': fontcolor=white: fontsize=120" output01.mp4
+
+ffmpeg -f image2 -framerate 1/2 -i %d.jpeg -r 25 output01.mp4
+
+ffmpeg -f image2 -framerate 1/2 -i %d.PNG  output01.mp4
+
+//watermark 
+
+ffmpeg -i input.mp4 -vf "movie=1.png [watermark]; [watermark]scale=300*300[watermark2];[in][watermark2] overlay [out]" output02.mp4
+
+ffmpeg -i input.mp4 -vf "movie=1.png [watermark]; [watermark]scale=300*300[watermark2];[in][watermark2] overlay=300:200 [out]" output02.mp4
+
+ffmpeg -i input.mp4 -vf "movie=1.png [watermark]; [watermark]scale=300*300[watermark2];[in][watermark2] overlay=main_w-overlay_w-10:main_h-overlay_h-10 [out]" output02.mp4
+
+//subtitle
+ffmpeg -i abc.mp4 -vf subtitle=subtitle.srt output02.mp4
+
+//adding solid background to an audio file
+ffmpeg -i input.mp3 -f lavfi -i color=c=blue:s=640x480:r=15 -acodec copy -shortest abcd.mp4
+
+
+ffmpeg -i input.mp4 -vf "movie=1.png [watermark]; [watermark]scale=300*300[watermark2];[in][watermark2] overlay=enable='between(t\,45,50)' [out]" output02.mp4
+
+
+//adding multiple overlay images to a video
+ffmpeg -y -i input.mp4 -i 1.png -i 2.png -filter_complex [0][1]overlay=enable='between(t,5,35)':x=10:y=10[out];[out][2]overlay=enable='between(t,40,55)':x=10:y=20[out] -map [out] -map 0:a? output.mp4 2> Overlay.txt
+
+ffmpeg -y -i input.mp4 -i 1.png -i 2.png -filter_complex [0][1]overlay=enable='between(t,2,25)':x=1:y=1[out]; [out][2]overlay=enable='between(t,26,55)':x=1:y=1[out]; -map [out] -map 0:a? New-input.mp4
+
+ffmpeg -y -i "F:\temp\ffmpeg\input.mp4" -i "F:\temp\ffmpeg\1.PNG" -i "F:\temp\ffmpeg\2.PNG" -filter_complex [0][1]overlay=enable='between(t,2,25)':x=1:y=1[out]; [out][2]overlay=enable='between(t,26,55)':x=1:y=2[out]; -map [out] -map 0:a? "F:\temp\ffmpeg\New-input.mp4"
+
+
+//help 
+https://daengood.medium.com/ffmpeg-commands-and-examples-51011d0c3e00
+
+
+
+0001950100000850
+000
+
+
+warning
+Warning! The maximum key length for a clustered index is 900 bytes. The index 'PK_AspNetUserLogins' has maximum length of 1800 bytes. For some combination of large values, the insert/update operation will fail.
+Warning! The maximum key length for a clustered index is 900 bytes. The index 'PK_AspNetUserTokens' has maximum length of 1816 bytes. For some combination of large values, the insert/update operation will fail.
+
+THE COMPLETE GUIDE (INCL. REACT ROUTER 4 & REDUX)
