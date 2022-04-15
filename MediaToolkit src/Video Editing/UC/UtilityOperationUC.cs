@@ -20,10 +20,29 @@ namespace Video_Editing.UC
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-           var image= UtilityMethods.DrawText(txtInput.Text, 
-                new Font(label1.Font.Name,label1.Font.Size,label1.Font.Style,label1.Font.Unit)
-                , Color.Black, Color.White);
+            var image = GenerateImage();
             pictureBox1.Image = image;
+        }
+        private Image GenerateImage()
+        {
+
+            var size = new Size((int)numWidth.Value, (int)numHeight.Value);
+            var font = new Font(txtInput.Font.Name, label1.Font.Size * 5f, txtInput.Font.Style, label1.Font.Unit);
+            var image = UtilityMethods.DrawText(txtInput.Text,
+                 font
+                 , Color.Black, Color.White, size);
+            return image;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            var image = GenerateImage();
+            saveFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                image.Save(saveFileDialog1.FileName);
+            }
         }
     }
 }

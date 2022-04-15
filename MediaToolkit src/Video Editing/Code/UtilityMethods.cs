@@ -10,7 +10,7 @@ namespace Video_Editing.Code
     public static class UtilityMethods
     {
 
-        public static Image DrawText(String text, Font font, Color textColor, Color backColor)
+        public static Image DrawText(String text, Font font, Color textColor, Color backColor,Size size)
         {
             //first, create a dummy bitmap just to get a graphics object
             Image img = new Bitmap(1, 1);
@@ -24,7 +24,7 @@ namespace Video_Editing.Code
             drawing.Dispose();
 
             //create a new image of the right size
-            img = new Bitmap((int)textSize.Width, (int)textSize.Height);
+            img = new Bitmap(size.Width, size.Height);
 
             drawing = Graphics.FromImage(img);
 
@@ -33,8 +33,10 @@ namespace Video_Editing.Code
 
             //create a brush for the text
             Brush textBrush = new SolidBrush(textColor);
-
-            drawing.DrawString(text, font, textBrush, 0, 0);
+            var siz = new SizeF(size.Width,size.Height);
+            var pointf = new PointF(0, 0);
+            var layout = new RectangleF(pointf, siz);
+            drawing.DrawString(text, font, textBrush, layout,new StringFormat());
 
             drawing.Save();
 
