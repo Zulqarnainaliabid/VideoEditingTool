@@ -31,15 +31,18 @@ namespace Video_Editing
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.videoEditingUC1 = new Video_Editing.UC.VideoEditingUC();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.youtubeManagerUC1 = new Video_Editing.UC.YoutubeManagerUC();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.utilityOperationUC1 = new Video_Editing.UC.UtilityOperationUC();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.image2TextUC1 = new Video_Editing.UC.Image2TextUC();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -47,6 +50,7 @@ namespace Video_Editing
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -64,6 +68,13 @@ namespace Video_Editing
             this.tabPage1.Text = "Video Editing";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // videoEditingUC1
+            // 
+            this.videoEditingUC1.Location = new System.Drawing.Point(6, 6);
+            this.videoEditingUC1.Name = "videoEditingUC1";
+            this.videoEditingUC1.Size = new System.Drawing.Size(1200, 625);
+            this.videoEditingUC1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.youtubeManagerUC1);
@@ -73,6 +84,13 @@ namespace Video_Editing
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Youtube Manager";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // youtubeManagerUC1
+            // 
+            this.youtubeManagerUC1.Location = new System.Drawing.Point(7, 9);
+            this.youtubeManagerUC1.Name = "youtubeManagerUC1";
+            this.youtubeManagerUC1.Size = new System.Drawing.Size(1200, 625);
+            this.youtubeManagerUC1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -84,26 +102,29 @@ namespace Video_Editing
             this.tabPage3.Text = "Tools";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // videoEditingUC1
-            // 
-            this.videoEditingUC1.Location = new System.Drawing.Point(6, 6);
-            this.videoEditingUC1.Name = "videoEditingUC1";
-            this.videoEditingUC1.Size = new System.Drawing.Size(1200, 625);
-            this.videoEditingUC1.TabIndex = 0;
-            // 
-            // youtubeManagerUC1
-            // 
-            this.youtubeManagerUC1.Location = new System.Drawing.Point(7, 9);
-            this.youtubeManagerUC1.Name = "youtubeManagerUC1";
-            this.youtubeManagerUC1.Size = new System.Drawing.Size(1200, 625);
-            this.youtubeManagerUC1.TabIndex = 0;
-            // 
             // utilityOperationUC1
             // 
             this.utilityOperationUC1.Location = new System.Drawing.Point(6, 9);
             this.utilityOperationUC1.Name = "utilityOperationUC1";
             this.utilityOperationUC1.Size = new System.Drawing.Size(1200, 625);
             this.utilityOperationUC1.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.image2TextUC1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1214, 643);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Image2Text";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // image2TextUC1
+            // 
+            this.image2TextUC1.Location = new System.Drawing.Point(3, 3);
+            this.image2TextUC1.Name = "image2TextUC1";
+            this.image2TextUC1.Size = new System.Drawing.Size(1200, 625);
+            this.image2TextUC1.TabIndex = 0;
             // 
             // VideoEditing
             // 
@@ -117,6 +138,7 @@ namespace Video_Editing
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,6 +152,8 @@ namespace Video_Editing
         private UC.YoutubeManagerUC youtubeManagerUC1;
         private System.Windows.Forms.TabPage tabPage3;
         private UC.UtilityOperationUC utilityOperationUC1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private UC.Image2TextUC image2TextUC1;
     }
 }
 
